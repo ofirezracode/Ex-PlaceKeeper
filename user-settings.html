@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/user-settings.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Place Keeper</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/854/854980.png" />
+      </a>
+      <div class="">
+        <ul class="nav-links">
+          <li>
+            <a class="nav-link active" href="index.html">Place Keeper</a>
+          </li>
+          <li>
+            <a class="nav-link" href="user-settings.html">User Preferences</a>
+          </li>
+          <li>
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <form onsubmit="onFormSubmit(event)" class="form-settings">
+      <h2>Set Preferences</h2>
+      <hr />
+      <ul class="form-inputs">
+        <li class="form-inputs-item">
+          <h3>Info</h3>
+          <label for="pref-name">Name</label>
+          <input required id="pref-name" type="text" placeholder="Your name" />
+          <label for="pref-email">Email</label>
+          <input required id="pref-email" type="email" placeholder="Your Email" />
+          <label for="pref-bd">Birth Date</label>
+          <input required id="pref-bd" type="date" />
+          <label for="pref-bt">Birth Time</label>
+          <input id="pref-bt" type="time" />
+          <label for="pref-age">Age <span class="pref-age-chosen">(23)</span></label>
+          <input oninput="onSliderInput(this.value)" id="pref-age" type="range" min="18" max="120" value="23" />
+        </li>
+        <li class="form-inputs-item">
+          <h3>Colors</h3>
+          <label for="pref-bgc">BG Color</label>
+          <input id="pref-bgc" type="color" class="input-color" value="#e0daa2" />
+          <label for="pref-color">Text Color</label>
+          <input id="pref-color" class="input-color" type="color" value="#2c2b1e" />
+        </li>
+      </ul>
+      <button>Save</button>
+      <p class="save-status"></p>
+    </form>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/user.service.js"></script>
+    <script src="js/user.controller.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/map.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <title>Place Keeper</title>
+  </head>
+  <body onload="onInit()">
+    <nav>
+      <a href="index.html">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/854/854980.png" />
+      </a>
+      <div class="">
+        <ul class="nav-links">
+          <li>
+            <a class="nav-link active" href="index.html">Place Keeper</a>
+          </li>
+          <li>
+            <a class="nav-link" href="user-settings.html">User Preferences</a>
+          </li>
+          <li>
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="container">
+      <ul class="container-content">
+        <li class="item-map"><div id="map"></div></li>
+        <li class="item-places">
+          <header>
+            <h3>My Places</h3>
+            <figure class="btn target-icon-container">
+              <img onclick="onPanHome()" class="target-icon" src="https://cdn-icons-png.flaticon.com/512/2794/2794702.png" />
+            </figure>
+          </header>
+          <hr />
+          <form onsubmit="onPlaceFormSubmit(event)" class="hidden">
+            <h4>Place Name?</h4>
+            <input class="place-name" type="text" />
+          </form>
+          <ul class="places"></ul>
+          <section class="pagination">
+            <button onclick="onPageChange({direction:-1})" class="btn pagination-btn pagination-back">
+              <img class="target-icon pagination-icon-back" src="https://cdn-icons-png.flaticon.com/512/2732/2732652.png" />
+            </button>
+            <div class="pagination pagination-pages"></div>
+            <button onclick="onPageChange({direction:1})" class="btn pagination-btn pagination-next">
+              <img class="target-icon pagination-icon-next" src="https://cdn-icons-png.flaticon.com/512/9126/9126127.png" />
+            </button>
+          </section>
+          <div class="places-download">
+            <a href="#" download="exported-data.csv" onclick="downloadCSV(this)" class="btn download-btn">Download CSV</a>
+          </div>
+        </li>
+      </ul>
+      <p class="save-status"></p>
+    </section>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/place.service.js"></script>
+    <script src="js/map.controller.js"></script>
+  </body>
+</html>

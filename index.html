@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Place Keeper</title>
+  </head>
+  <body onload="onHomeInit()">
+    <nav>
+      <a href="index.html">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/854/854980.png" />
+      </a>
+      <div class="">
+        <ul class="nav-links">
+          <li>
+            <a class="nav-link active" href="index.html">Place Keeper</a>
+          </li>
+          <li>
+            <a class="nav-link" href="user-settings.html">User Preferences</a>
+          </li>
+          <li>
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <section>
+          <h1 class="hero-text-header">Place Keeper</h1>
+          <p class="hero-text-para">
+            Never lose your favorite locations again - save them with ease. Explore new places and never forget where you've been by saving
+            your favorite locations.
+          </p>
+        </section>
+        <ul class="hero-links">
+          <li>
+            <a href="user-settings.html" class="hero-link hero-link-prefs">Preferences</a>
+          </li>
+          <li>
+            <a href="map.html" class="hero-link hero-link-start">Start</a>
+          </li>
+        </ul>
+      </div>
+      <img
+        class="hero-img w-100"
+        src="https://images.unsplash.com/photo-1503221043305-f7498f8b7888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80"
+      />
+    </section>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/user.service.js"></script>
+    <script src="js/home.controller.js"></script>
+  </body>
+</html>
