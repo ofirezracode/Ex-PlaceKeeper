@@ -3,22 +3,12 @@
 function onFormSubmit(e) {
   e.preventDefault()
 
-  const user = {}
+  const elInputs = Array.from(document.querySelectorAll('form input'))
 
-  const elName = document.querySelector('#pref-name')
-  user.name = elName.value
-  const elEmail = document.querySelector('#pref-email')
-  user.email = elEmail.value
-  const elBd = document.querySelector('#pref-bd')
-  user.birthDate = elBd.value
-  const elBt = document.querySelector('#pref-bt')
-  user.birthTime = elBt.value
-  const elAge = document.querySelector('#pref-age')
-  user.age = elAge.value
-  const elBgc = document.querySelector('#pref-bgc')
-  user.bgColor = elBgc.value
-  const elColor = document.querySelector('#pref-color')
-  user.txtColor = elColor.value
+  const user = elInputs.reduce((acc, elInput) => {
+    acc[elInput.id] = elInput.value
+    return acc
+  }, {})
 
   saveUserChanges(user)
   const elSaveStatus = document.querySelector('.save-status')

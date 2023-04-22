@@ -54,7 +54,8 @@ function _renderPlacesList() {
 }
 
 function _renderMapMarkers() {
-  const places = getPlaces()
+  const places = getPlaces(true)
+  console.log('places', places)
   if (places) places.forEach((place) => _renderPlaceMarker(place))
 }
 

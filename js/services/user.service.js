@@ -1,6 +1,6 @@
 'use strict'
 
-const gUser = {
+let gUser = {
   email: '',
   name: '',
   birthDate: '',
@@ -8,12 +8,11 @@ const gUser = {
   age: '',
   bgColor: '',
   txtColor: '',
-  isInitialized: false,
 }
 
-onInit()
+_initUser()
 
-function onInit() {
+function _initUser() {
   const user = loadFromStorage('user')
   console.log('user', user)
   if (user) saveUserChanges(user)
@@ -24,7 +23,7 @@ function getUser() {
 }
 
 function saveUserChanges(user) {
-  Object.keys(user).forEach((property) => (gUser[property] = user[property]))
-  gUser.isInitialized = true
+  // Object.keys(user).forEach((property) => (gUser[property] = user[property]))
+  gUser = user
   saveToStorage('user', gUser)
 }

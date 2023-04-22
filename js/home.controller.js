@@ -2,7 +2,7 @@
 
 function onHomeInit() {
   const user = getUser()
-  if (user.isInitialized) changeColors(user.bgColor, user.txtColor)
+  if (user.email) changeColors(user.bgColor, user.txtColor)
 }
 
 function changeColors(bgColor, txtColor) {

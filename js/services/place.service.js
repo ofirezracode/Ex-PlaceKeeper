@@ -27,7 +27,8 @@ function _createPlace(name, lat, lng, zoom) {
   }
 }
 
-function getPlaces() {
+function getPlaces(returnAll) {
+  if (returnAll) return gPlaces
   gPagesAmount = Math.ceil(gPlaces.length / PAGE_SIZE)
   const startIdx = gPageIdx > gPagesAmount ? 0 : gPageIdx * PAGE_SIZE
   return gPlaces.slice(startIdx, startIdx + PAGE_SIZE)
